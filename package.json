@@ -1,0 +1,20 @@
+{
+  "name": "electronapp",
+  "version": "1.0.0",
+  "description": "Test electron with desktop app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev:watch": "npx electronmon --trace-warnings ."
+  },
+  "keywords": [
+    "electron",
+    "reactjs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^22.0.2"
+  }
+}

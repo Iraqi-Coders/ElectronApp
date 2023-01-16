@@ -39,3 +39,12 @@ _Below is an example of how you can install the project and setting up the envir
 - [ ] deployment
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+
+<!-- RUN PROJECT -->
+## Run project
+
+ ```sh
+  npm run dev:watch
+   ```
+

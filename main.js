@@ -1,7 +1,8 @@
-const {app,BrowserWindow} = require('electron');
+const {app,BrowserWindow,Menu} = require('electron');
 const url = require('url');
 const path = require('path');
 const isMac=process.platform==='darwin'; //checking system
+// creating main window
 function createMainWindow(){
     const mainWindow = new BrowserWindow({
         title :'Metalux Resizer',
@@ -12,19 +13,12 @@ function createMainWindow(){
 
     });
 
-    const startUrl = url.format({
-        pathname: path.join(__dirname,'index.html'),
-        protoco: 'file',
-
-    });
-
-
+    // loading the UI
     mainWindow.loadFile(path.join(__dirname,'./renderer/main.html'));
-    
 
 }
 
-
+// calling mainwindow
 app.whenReady().then(()=>{
    
     app.on('activate',()=>{

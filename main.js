@@ -1,35 +1,33 @@
-const {app,BrowserWindow,Menu} = require('electron');
-const url = require('url');
-const path = require('path');
-const isMac=process.platform==='darwin'; //checking system
+const { app, BrowserWindow } = require('electron')
+const path = require('path')
+
+//checking system
+const isMac = process.platform === 'darwin'
+
 // creating main window
-function createMainWindow(){
-    const mainWindow = new BrowserWindow({
-        title :'Metalux Resizer',
+function createMainWindow() {
+  const mainWindow = new BrowserWindow({
+    title: 'Metalux Resizer',
+    width: 1000,
+    height: 600
+  })
 
-        width: 1000,
-
-        height: 600,
-
-    });
-
-    // loading the UI
-    mainWindow.loadFile(path.join(__dirname,'./renderer/main.html'));
-
+  // loading the UI
+  mainWindow.loadFile(path.join('renderer/main.html'))
 }
 
-// calling mainwindow
-app.whenReady().then(()=>{
-   
-    app.on('activate',()=>{
-        if (BrowserWindow.getAllWindows().length===0){
-            createMainWindow();
-        }
-    })
-}
-    );
-app.on('window-all-closed',()=>{
-    if(!isMac){
-        app.quit();
+// calling main window
+app.whenReady().then(() => {
+  createMainWindow()
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createMainWindow()
     }
+  })
+})
+app.on('window-all-closed', () => {
+  if (!isMac) {
+    app.quit()
+  }
 })

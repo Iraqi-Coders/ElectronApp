@@ -16,13 +16,13 @@
   "author": "Metalux",
   "license": "ISC",
   "dependencies": {
-    "electron": "^22.1.0",
-    "electron-builder": "^23.6.0",
     "resize-img": "^2.0.0",
     "sharp": "^0.31.3",
     "toastify-js": "^1.12.0"
   },
   "devDependencies": {
+    "electron-builder": "^23.6.0",
+    "electron": "^22.1.0",
     "electronmon": "^2.0.2"
   }
 }
